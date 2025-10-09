@@ -1,0 +1,8 @@
+7 4 2 5 1 6 3 
+Maximum Height of Tree : 4
+
+Is tree balance : YES
+
+Diameter of tree : 5
+
+Max Path sum of tree : 23

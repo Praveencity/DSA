@@ -1,0 +1,12 @@
+1 -> 2
+2 -> Not Exists
+3 -> 2
+4 -> 2
+5 -> 1
+---------------------------------------------
+Not Exists
+Not Exists
+Not Exists
+Not Exists
+It Exists
+It Exists

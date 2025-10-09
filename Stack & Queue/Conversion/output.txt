@@ -1,0 +1,3 @@
+Top: 30
+Top after pop: 20
+Size: 2

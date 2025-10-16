@@ -21,6 +21,7 @@ int main()
         cin>>x>>y>>wt;
         //For multiple edges in same notes
         dist[x][y] = min(dist[x][y],wt);
+        dist[y][x] = min(dist[y][x],wt); // For multidirected
     }
 
 

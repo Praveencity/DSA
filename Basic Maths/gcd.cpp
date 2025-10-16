@@ -22,7 +22,7 @@ int main()
     }
     */
 
-   while(a>0 && b>0)  // O(logϕ(min(a,b)))
+   while(a>0 && b>0)  // O(logϕ(max(a,b)))
    {
        if(a>b) a %= b;
        else b %= a;

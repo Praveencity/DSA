@@ -1,0 +1,29 @@
+Front of Queue is : 10
+Back of Queue is : 20
+Length of Queue is : 2
+Pop element is : 10
+Front of Queue is : 20
+Length of Queue is : 1
+Queue Overflow
+Length of Queue is : 10
+Pop element is : 20
+Length of Queue is : 9
+Pop element is : 0
+Length of Queue is : 8
+Pop element is : 10
+Length of Queue is : 7
+Pop element is : 20
+Length of Queue is : 6
+Pop element is : 30
+Length of Queue is : 5
+Pop element is : 40
+Length of Queue is : 4
+Pop element is : 50
+Length of Queue is : 3
+Pop element is : 60
+Length of Queue is : 2
+Pop element is : 70
+Length of Queue is : 1
+Pop element is : 80
+Length of Queue is : 0
+Queue Underflow

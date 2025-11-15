@@ -2,26 +2,24 @@
 #include <string>
 #include <stack>
 
-bool balanceParan(std::string s)
+using namespace std;
+
+bool balanceParan(string s)
 {
-    std::stack<char> st;
+    stack<char> st;
     int i = 0;
     int n = s.length();
     while (i < n)
     {
         if (s[i] == '(' || s[i] == '{' || s[i] == '[')
-        {
             st.push(s[i]);
-        }
         else
         {
             if (st.empty())
                 return false;
             char ch = st.top();
             if (s[i] == ')' && ch == '(' || s[i] == '}' && ch == '{' || s[i] == ']' && ch == '[')
-            {
                 st.pop();
-            }
             else
                 return false;
         }
@@ -34,12 +32,12 @@ bool balanceParan(std::string s)
 
 int main()
 {
-    std::string s = "[[]{()}]";
+    string s = "[[]{()}]";
 
     if (balanceParan(s))
-        std::cout << "Balanced\n";
+        cout << "Balanced\n";
     else
-        std::cout << "Not Balanced\n";
+        cout << "Not Balanced\n";
 
     return 0;
 }

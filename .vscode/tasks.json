@@ -20,7 +20,7 @@
             "label": "run with local input/output redirection",
             "type": "shell",
             "dependsOn": "compile active cpp",
-            "command": "\"${fileDirname}\\output.exe\" < input.txt > output.txt",
+            "command": "\".\\output.exe\" < input.txt > output.txt",
             "options": {
                 "cwd": "${fileDirname}",
                 "shell": {

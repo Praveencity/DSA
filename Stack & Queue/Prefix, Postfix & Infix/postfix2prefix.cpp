@@ -2,21 +2,21 @@
 #include <string>
 #include <stack>
 #include <cctype>
+using namespace std;
 
-
-std::string post2Pre(std::string s)
+string post2Pre(string s)
 {
-    std::stack<std::string> pre;
+    stack<string> pre;
     int i = 0;
     int n = s.length();
     while(i<n)
     {   
-        if(isalnum(s[i])) pre.push(std::string(1,s[i]));
+        if(isalnum(s[i])) pre.push(string(1,s[i]));
         else
         {
-            std::string t1 = pre.top(); pre.pop();
-            std::string t2 = pre.top(); pre.pop();
-            pre.push(std::string(1,s[i]) + t2 + t1);
+            string t1 = pre.top(); pre.pop();
+            string t2 = pre.top(); pre.pop();
+            pre.push(string(1,s[i]) + t2 + t1);
         }
         i++;
     }
@@ -25,7 +25,7 @@ std::string post2Pre(std::string s)
 
 int main()
 {
-    std::string post_exp = "ABC/-AK/L-*";
-    std::cout << "Prefix : " << post2Pre(post_exp);
+    string post_exp = "ABC/-AK/L-*";
+    cout << "Prefix : " << post2Pre(post_exp);
     return 0;
 }

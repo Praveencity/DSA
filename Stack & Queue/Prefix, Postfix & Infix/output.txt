@@ -1,1 +1,1 @@
-Postfix : ABC/-AK/L-*
+Infix : ((A-(B/C))*((A/K)-L))

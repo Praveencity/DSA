@@ -1,8 +1,9 @@
-7 4 2 5 1 6 3 
-Maximum Height of Tree : 4
 
-Is tree balance : YES
-
-Diameter of tree : 5
-
-Max Path sum of tree : 23
+Preorder DFS: 1 2 4 4 3 4 
+Inorder DFS: 4 2 4 1 4 3 
+Postorder DFS: 4 4 2 4 3 1 
+BFS: 1 2 3 4 4 4 
+Iterative Preorder: 1 2 4 4 3 4 
+Iterative Inorder: 4 2 4 1 4 3 
+Iterative Postorder 2 stack: 4 4 2 4 3 1 
+Iterative Postorder 1 stack: 4 4 2 4 3 1 

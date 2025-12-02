@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <stack>
-
+using namespace std;
 class Node
 {
     public:
@@ -22,7 +22,7 @@ class Node
 void preorder(Node* root)
 {
     if(!root) return;
-    std::cout << root->data << " ";
+    cout << root->data << " ";
     preorder(root->left);
     preorder(root->right);
 }
@@ -31,7 +31,7 @@ void inorder(Node* root)
 {
     if(root == NULL) return;
     inorder(root->left);
-    std::cout << root->data << " ";
+    cout << root->data << " ";
     inorder(root->right);
 }
 
@@ -40,7 +40,7 @@ void postorder(Node* root)
     if(!root) return;
     postorder(root->left);
     postorder(root->right);
-    std::cout << root->data << " ";
+    cout << root->data << " ";
 }
 
 // BFS traversal
@@ -48,13 +48,13 @@ void postorder(Node* root)
 void bfs(Node* root)
 {
     if (!root) return;
-    std::queue<Node*> q;
+    queue<Node*> q;
     q.push(root);
     while(!q.empty())
     {
         Node* curr = q.front();
         q.pop();
-        std::cout << curr->data << " ";
+        cout << curr->data << " ";
         if (curr->left) q.push(curr->left);
         if(curr->right) q.push(curr->right);
     }
@@ -65,13 +65,13 @@ void bfs(Node* root)
 void iterativePreorder(Node* root)
 {
     if(!root) return;
-    std::stack<Node*> s;
+    stack<Node*> s;
     s.push(root);
     while(!s.empty())
     {
         Node* curr = s.top();
         s.pop();
-        std::cout << curr->data << " ";
+        cout << curr->data << " ";
         if(curr->right) s.push(curr->right);
         if(curr->left) s.push(curr->left);
     }
@@ -79,7 +79,7 @@ void iterativePreorder(Node* root)
 
 void iterativeInorder(Node* root)
 {
-    std::stack<Node*> st;
+    stack<Node*> st;
     Node* curr = root;
     while(true)
     {
@@ -93,7 +93,7 @@ void iterativeInorder(Node* root)
             if(st.empty()) break;
             curr = st.top();
             st.pop();
-            std::cout << curr->data << " ";
+            cout << curr->data << " ";
             curr = curr->right;
         }
     }
@@ -103,7 +103,7 @@ void iterativeInorder(Node* root)
 void iterative2StPostorder(Node* root)
 {
     if(!root) return;
-    std::stack<Node*> st1,st2;
+    stack<Node*> st1,st2;
     st1.push(root);
 
     while(!st1.empty())
@@ -116,14 +116,14 @@ void iterative2StPostorder(Node* root)
     }
     while(!st2.empty())
     {
-        std::cout << st2.top()->data << " ";
+        cout << st2.top()->data << " ";
         st2.pop();
     }
 }
 
 void iterativePostorder(Node* root)
 {
-    std::stack<Node*> st;
+    stack<Node*> st;
     Node* curr = root;
     while(!st.empty() || curr)
     {
@@ -139,10 +139,10 @@ void iterativePostorder(Node* root)
             {
                 temp = st.top();
                 st.pop();
-                std::cout << temp->data << " ";
+                cout << temp->data << " ";
                 while(!st.empty() && temp == st.top()->right)
                 {
-                    std::cout << st.top()->data << " ";
+                    cout << st.top()->data << " ";
                     temp = st.top();
                     st.pop();
                 }
@@ -172,30 +172,30 @@ int main()
 
     //DFS traversal
 
-    std::cout << "\nPreorder DFS: ";
+    cout << "\nPreorder DFS: ";
     preorder(root);
 
-    std::cout << "\nInorder DFS: ";
+    cout << "\nInorder DFS: ";
     inorder(root);
 
-    std::cout << "\nPostorder DFS: ";
+    cout << "\nPostorder DFS: ";
     postorder(root);
 
     //BFS
-    std::cout << "\nBFS: ";
+    cout << "\nBFS: ";
     bfs(root);
 
     // Iterative
-    std::cout << "\nIterative Preorder: ";
+    cout << "\nIterative Preorder: ";
     iterativePreorder(root);
     
-    std::cout << "\nIterative Inorder: ";
+    cout << "\nIterative Inorder: ";
     iterativeInorder(root);
 
-    std::cout << "\nIterative Postorder 2 stack: ";
+    cout << "\nIterative Postorder 2 stack: ";
     iterative2StPostorder(root);
     
-    std::cout << "\nIterative Postorder 1 stack: ";
+    cout << "\nIterative Postorder 1 stack: ";
     iterativePostorder(root);
 
     

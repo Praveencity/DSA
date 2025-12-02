@@ -1,0 +1,17 @@
+# Git ignore for DSA repository
+# Ignore compiled binaries and executables
+# Ignore all .exe files anywhere in the repository
+*.exe
+
+# Optional: ignore some common binary and build artifacts too
+*.o
+*.obj
+*.dll
+*.class
+*.pyc
+__pycache__/
+
+# Ignore OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/

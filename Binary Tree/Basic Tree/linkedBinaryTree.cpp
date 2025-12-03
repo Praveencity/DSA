@@ -1,6 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <stack>
+#include <algorithm>
 using namespace std;
 class Node
 {
@@ -47,16 +48,27 @@ void postorder(Node* root)
 
 void bfs(Node* root)
 {
+    vector<vector<int>> ans;
     if (!root) return;
     queue<Node*> q;
     q.push(root);
     while(!q.empty())
     {
-        Node* curr = q.front();
-        q.pop();
-        cout << curr->data << " ";
-        if (curr->left) q.push(curr->left);
-        if(curr->right) q.push(curr->right);
+        int len = q.size();
+        vector<int> level;
+        for(int i=0;i<len;i++){
+            Node * curr = q.front();
+            q.pop();
+            if(curr->left) q.push(curr->left);
+            if(curr->right) q.push(curr->right);
+            level.push_back(curr->data);
+        }
+        ans.push_back(level);
+    }
+    for(int i=0;i<ans.size();i++){
+        for(int j=0;j<ans[i].size();j++){
+            cout << ans[i][j] << ' ';
+        }
     }
 }
 
@@ -123,36 +135,19 @@ void iterative2StPostorder(Node* root)
 
 void iterativePostorder(Node* root)
 {
+    vector<int> ans;
     stack<Node*> st;
-    Node* curr = root;
-    while(!st.empty() || curr)
-    {
-        if(curr)
-        {
-            st.push(curr);
-            curr = curr->left;
-        }
-        else
-        {
-            Node* temp = st.top()->right;
-            if(!temp)
-            {
-                temp = st.top();
-                st.pop();
-                cout << temp->data << " ";
-                while(!st.empty() && temp == st.top()->right)
-                {
-                    cout << st.top()->data << " ";
-                    temp = st.top();
-                    st.pop();
-                }
-            }
-            else
-            {
-                curr = temp;
-            }
-        }
+    st.push(root);
+    while(!st.empty()){
+        Node * curr = st.top();
+        st.pop();
+        ans.push_back(curr->data);
+        if(curr->left) st.push(curr->left);
+        if(curr->right) st.push(curr->right);
     }
+    reverse(ans.begin(),ans.end());
+    for(auto i:ans)
+        cout << i << ' ';
 }
 
 void iterativeTraversal(Node* root)
@@ -165,9 +160,9 @@ int main()
     Node* root = new Node(1);
     root->left = new Node(2);
     root->right = new Node(3);
-    root->left->right = new Node(4);
+    root->left->right = new Node(5);
     root->left->left = new Node(4);
-    root->right->left = new Node(4);
+    root->right->left = new Node(6);
 
 
     //DFS traversal

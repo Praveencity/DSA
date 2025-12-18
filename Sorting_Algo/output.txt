@@ -1,0 +1,2 @@
+Original Array: 43 21 45 65 2 34 3 42 
+After Heap Sort: 2 3 21 34 42 43 45 65 

@@ -11,19 +11,25 @@ using namespace std;
  *
  * 1. It uses a stack of characters (std::stack<char>) to hold
  * operators and parentheses.
+ * 
  * 2. It iterates through the infix string from LEFT to RIGHT.
+ * 
  * 3. Operands (letters/numbers) are appended directly to the
  * 'postfix' string.
+ * 
  * 4. '(' is pushed onto the stack.
+ * 
  * 5. ')' triggers a pop of all operators from the stack (appending
  * them to 'postfix') until '(' is found, which is then popped
  * and discarded.
+ * 
  * 6. Operator Precedence:
  * - For Left-Associative (*, /, +, -): Pop ops from the stack
  * that have GREATER THAN OR EQUAL precedence to the current op.
  * - For Right-Associative (^): Pop ops from the stack that
  * have strictly GREATER precedence (this code implements
  * this by only pushing if the top is not >=, i.e., <).
+ * 
  * 7. After the loop, any remaining operators on the stack are
  * popped and appended to the 'postfix' string.
  * ===================================================================

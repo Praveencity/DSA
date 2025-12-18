@@ -8,7 +8,7 @@
             "args": [
                 "-std=c++17",
                 "-o",
-                "${fileDirname}\\output.exe",
+                "${workspaceFolder}\\output.exe",
                 "${file}"
             ],
             "group": {
@@ -20,20 +20,20 @@
             "label": "run with local input/output redirection",
             "type": "shell",
             "dependsOn": "compile active cpp",
-            "command": "\".\\output.exe\" < input.txt > output.txt",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "output.exe < input.txt > output.txt"
+            ],
             "options": {
-                "cwd": "${fileDirname}",
+                "cwd": "${workspaceFolder}",
                 "shell": {
-                    "executable": "cmd.exe",
-                    "args": [
-                        "/d",
-                        "/c"
-                    ]
+                    "executable": "cmd.exe"
                 }
             },
-            "group": { // <--- MODIFIED THIS BLOCK
+            "group": {
                 "kind": "build",
-                "isDefault": true // <--- Set this to true
+                "isDefault": true
             },
             "problemMatcher": []
         },

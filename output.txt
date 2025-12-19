@@ -1,2 +1,1 @@
-Before : 23 45 12 45 7 68 9 56 
-After making heap : 68 56 23 45 7 12 9 45 
+2
